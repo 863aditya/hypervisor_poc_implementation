@@ -1,0 +1,4 @@
+docker build -t my-postgres-db .
+docker run --name some-postgres -p 5432:5432 -d my-postgres-db
+docker exec -it container_id bash
+psql -U hypervisor_user -d hypervisor_db
