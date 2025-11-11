@@ -102,6 +102,20 @@ int client_run(std::string username,std::string key,int SERVER_PORT = 2222){
     close(s);
     return 0;
 }
-int main(){
-    client_run("thunder","KKKKKKKKKKKKKKKKKKKKKKKKK",2232);
+int main(int argc, char** argv){
+    if(argc < 4){
+        std::cerr << "Usage: " << (argc>0 ? argv[0] : "client") << " <username> <key> <port>\n";
+        return 1;
+    }
+    std::string username = argv[1];
+    std::string key = argv[2];
+    int port = 0;
+    try{
+        port = std::stoi(argv[3]);
+    }catch(...){
+        std::cerr << "Invalid port: " << argv[3] << "\n";
+        return 1;
+    }
+
+    return client_run(username, key, port);
 }

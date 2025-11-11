@@ -12,8 +12,7 @@ void instance::add_pid(int pid){
 void instance::remove_pid(int pid){
     pids.erase(pid);
 }
-
- void instance::run(){
+void instance::run(){
     std::cout<<"Instance for user "<<username<<" is running with "<<num_of_cpu<<" CPUs, "<<ram_size<<" MB RAM and "<<persistent_storage<<" MB storage.\n";
     std::thread t([&](){
         sched_setaffinity(0, cpu_ids.size()*sizeof(int), (cpu_set_t*)cpu_ids.data());

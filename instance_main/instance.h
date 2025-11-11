@@ -26,7 +26,6 @@ public:
     // manage pids
     void add_pid(int pid);
     void remove_pid(int pid);
-
     // run the instance (spawns a mini_ssh server thread)
     void run();
 };

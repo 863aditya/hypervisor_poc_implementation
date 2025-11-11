@@ -30,7 +30,7 @@ class hypervisor{
 
     // user related
     int login(std::string &username,std::string &password);
-    int request_resources(std::string username,int cpu,int ram,int storage,bool key_gen_req);
+    int request_resources(std::string username,int cpu,int ram,int storage,bool key_gen_req,bool insert_into_db);
     // int get_id(std::string &username);
     std::string key_generation();
 
